@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portal_berita/constans.dart';
 import 'package:portal_berita/beranda/beranda_view.dart';
+import 'package:portal_berita/pesanan/pesanan_view.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -10,6 +11,9 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   int _bottomNavCurrentIndex = 0;
   List<Widget> _container = [
+    new BerandaPage(),
+    new PesananPage(),
+    new BerandaPage(),
     new BerandaPage(),
   ];
 
@@ -26,7 +30,9 @@ class _LandingPageState extends State<LandingPage> {
         type: BottomNavigationBarType.fixed,
         onTap: (index) {
           setState(() {
-            _bottomNavCurrentIndex = index;
+            print(this._bottomNavCurrentIndex);
+            this._bottomNavCurrentIndex = index;
+            // print();
           });
         },
         currentIndex: _bottomNavCurrentIndex,
